@@ -35,15 +35,15 @@ npm install
 
 **Esto instalará:**
 
-- **discord.js** — Librería principal para interactuar con Discord.
+- `discord.js` — Librería principal para interactuar con Discord.
 
-- **dotenv** — Para manejar variables de entorno como tu token de bot.
+- `dotenv` — Para manejar variables de entorno como tu token de bot.
 
-- **openai** — Cliente oficial de la API de OpenAI (solo si usarás /chat).
+- `openai` — Cliente oficial de la API de OpenAI (solo si usarás `/chat`).
 
-### 3. Crea tu archivo .env
+### 3. Crea tu archivo `.env`
 
-En la raíz del proyecto, crea un archivo llamado .env y agrega lo siguiente:
+En la raíz del proyecto, crea un archivo llamado `.env` y agrega lo siguiente:
 
 ```
 TOKEN=tu_token_de_discord
@@ -51,7 +51,7 @@ CLIENT_ID=tu_client_id_de_discord
 OPENAI_API_KEY=tu_api_key_de_openai  # Solo si usarás el comando /chat
 ```
 
-**⚠️ Importante: Nunca subas este archivo a GitHub. Está en el .gitignore por seguridad.**
+**⚠️ Importante:** Nunca subas este archivo a GitHub. Está en el `.gitignore` por seguridad.
 
 ### 4. Registra los comandos con Discord
 
@@ -60,7 +60,7 @@ npm run deploy
 ```
 
 Los comandos globales pueden tardar hasta 1 hora en aparecer en Discord.
-Si usas **Routes.applicationGuildCommands(...)** aparecerán al instante solo en un servidor específico.
+Si usas `Routes.applicationGuildCommands(...)` aparecerán al instante solo en un servidor específico.
 
 ### 5. Inicia el bot
 
@@ -69,7 +69,10 @@ npm start
 ```
 
 Si todo está correcto, verás en la consola:
-**✅ Bot conectado como MyBot#1234**
+
+```
+✅ Bot conectado como MyBot#1234
+```
 
 ## 🗂️ Estructura del proyecto
 
@@ -96,11 +99,11 @@ mybot/
 
 - Node.js 18 o superior
 
-- Cuenta de Discord y una app/bot creada en el Developer Portal
+- Cuenta de Discord y una app/bot creada en el [Developer Portal](https://discord.com/developers/applications)
 
-- (Opcional) Cuenta con créditos o plan activo en OpenAI si usarás el comando /chat.
+- (Opcional) Cuenta con créditos o plan activo en [OpenAI](https://platform.openai.com) si usarás el comando `/chat`.
 
-## 💬 Notas sobre el comando /chat
+## 💬 Notas sobre el comando `/chat`
 
 Si no has activado un plan de pago en OpenAI o ya agotaste tus créditos gratuitos, verás un mensaje como:
 
@@ -112,11 +115,11 @@ Esto es normal. El comando funcionará automáticamente cuando tengas una API Ke
 
 ## 🛠️ Comandos útiles de desarrollo
 
-**npm start** — Ejecuta el bot localmente (index.js)
+`npm start` — Ejecuta el bot localmente (`index.js`)
 
-**npm run deploy** — Registra o actualiza los comandos slash con Discord
+`npm run deploy` — Registra o actualiza los comandos slash con Discord
 
-**git add . && git commit -m "mensaje" && git push** — Sube cambios a GitHub (Railway detectará automáticamente y redeplegará)
+`git add . && git commit -m "mensaje" && git push` — Sube cambios a GitHub (Railway detectará automáticamente y redeplegará)
 
 ## 🧠 ¿Por qué este bot?
 
