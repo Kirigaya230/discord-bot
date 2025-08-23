@@ -1,10 +1,4 @@
 {
     "discord.enabled": true,
-
-    "discord.customButtons": [
-  {
-    "label": "GitHub Profile",
-    "url": "https://github.com/Kirigaya230"
-  }
-]
+    
 }
