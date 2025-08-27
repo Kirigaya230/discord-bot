@@ -22,10 +22,10 @@ module.exports = {
       const member = await interaction.guild.members.fetch(user.id);
       await member.ban({ reason: razon });
 
-      await interaction.reply(`🔨 ${user.tag} fue baneado.\n📄 Razón: ${razon}`);
+      await interaction.reply({ content: `🔨 ${user.tag} fue baneado.\n📄 Razón: ${razon}`, ephemeral: true });
     } catch (err) {
       console.error(err);
-      await interaction.reply('❌ No pude banear a ese usuario.');
+      await interaction.reply({ content: '❌ No pude banear a ese usuario.', ephemeral: true });
     }
   },
 };

@@ -33,10 +33,10 @@ module.exports = {
 
     try {
       await interaction.channel.bulkDelete(filtrados, true);
-      await interaction.reply(`🧹 Se eliminaron ${filtrados.length} mensajes ${usuario ? `de ${usuario.tag}` : ''}.`);
+      await interaction.reply({ content: `🧹 Se eliminaron ${filtrados.length} mensajes ${usuario ? `de ${usuario.tag}` : ''}.`, ephemeral: true });
     } catch (err) {
       console.error(err);
-      await interaction.reply('❌ No pude eliminar los mensajes.');
+      await interaction.reply({ content: '❌ No pude eliminar los mensajes.', ephemeral: true });
     }
   },
 };

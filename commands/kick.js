@@ -16,10 +16,12 @@ module.exports = {
 
     try {
       await member.kick();
-      await interaction.reply(`👢 ${user.tag} fue expulsado del servidor.`);
+      await interaction.reply({ content: `👢 ${user.tag} fue expulsado del servidor.`, ephemeral: true });
+
     } catch (err) {
       console.error(err);
-      await interaction.reply('❌ No pude expulsar a ese usuario.');
+      await interaction.reply({ content: '❌ No pude expulsar a ese usuario.', ephemeral: true });
+
     }
   },
 };

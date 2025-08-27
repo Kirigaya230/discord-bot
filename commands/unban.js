@@ -15,10 +15,10 @@ module.exports = {
 
     try {
       await interaction.guild.members.unban(userId);
-      await interaction.reply(`✅ El usuario con ID \`${userId}\` fue desbaneado.`);
+      await interaction.reply({ content: `✅ El usuario con ID \`${userId}\` fue desbaneado.`, ephemeral: true });
     } catch (err) {
       console.error(err);
-      await interaction.reply('❌ No pude desbanear a ese usuario. Verifica que el ID sea correcto.');
+      await interaction.reply({ content: '❌ No pude desbanear a ese usuario. Verifica que el ID sea correcto.', ephemeral: true });
     }
   },
 };

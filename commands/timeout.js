@@ -21,10 +21,10 @@ module.exports = {
 
     try {
       await member.timeout(minutes * 60 * 1000);
-      await interaction.reply(`⏳ ${user.tag} fue silenciado por ${minutes} minutos.`);
+      await interaction.reply({ content: `⏳ ${user.tag} fue silenciado por ${minutes} minutos.`, ephemeral: true });
     } catch (err) {
       console.error(err);
-      await interaction.reply('❌ No pude silenciar a ese usuario.');
+      await interaction.reply({ content: '❌ No pude silenciar a ese usuario.', ephemeral: true });
     }
   },
 };
