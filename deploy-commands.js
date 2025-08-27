@@ -1,24 +1,22 @@
-const fs = require('node:fs');
-const path = require('node:path');
 const { REST, Routes } = require('discord.js');
+const fs = require('node:fs');
 require('dotenv').config();
 
 const commands = [];
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = './commands';
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-// Cargar todos los comandos
+// Lee todos los archivos de comandos
 for (const file of commandFiles) {
-  const filePath = path.join(commandsPath, file);
-  const command = require(filePath);
+  const command = require(`./commands/${file}`);
   if ('data' in command && 'execute' in command) {
     commands.push(command.data.toJSON());
   } else {
-    console.log(`[ADVERTENCIA] El comando en ${filePath} está mal formado.`);
+    console.warn(`[ADVERTENCIA] El comando en ${file} no tiene "data" o "execute".`);
   }
 }
 
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+const rest = new REST().setToken(process.env.TOKEN);
 
 (async () => {
   try {
@@ -29,7 +27,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
       { body: commands },
     );
 
-    console.log('✅ ¡Todos los comandos fueron registrados correctamente!');
+    console.log('✅ ¡Comandos registrados con éxito!');
   } catch (error) {
     console.error('❌ Error al registrar:', error);
   }
