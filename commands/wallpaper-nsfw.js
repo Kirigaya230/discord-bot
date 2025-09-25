@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('wallpaper')
+    .setName('wallpaper-nsfw')
     .setDescription('Envía una imagen aleatoria de wallpaper (nsfw).'),
   async execute(interaction) {
     await interaction.deferReply(); // por si tarda un poquito

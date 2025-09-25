@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('waifu')
+    .setName('waifu-nsfw')
     .setDescription('Envía una imagen aleatoria de waifu (nsfw).'),
   async execute(interaction) {
     await interaction.deferReply(); // por si tarda un poquito
