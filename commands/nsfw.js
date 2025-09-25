@@ -2,18 +2,18 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('wallpaper-nsfw')
-    .setDescription('Envía una imagen aleatoria de wallpaper (nsfw).'),
+    .setName('nsfw')
+    .setDescription('Envía una imagen aleatoria de nsfw (nsfw).'),
   async execute(interaction) {
     await interaction.deferReply(); // por si tarda un poquito
 
     try {
-      const res = await fetch('https://api.waifu.pics/nsfw/wallpaper');
+      const res = await fetch('https://api.waifu.pics/nsfw');
       const data = await res.json();
 
       const embed = new EmbedBuilder()
         .setColor(0xff66cc)
-        .setTitle('💖 Wallpaper Random')
+        .setTitle('💖 NSFW Random')
         .setImage(data.url)
         .setFooter({ text: 'Fuente: waifu.pics' });
 
