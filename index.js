@@ -199,4 +199,163 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
+client.on('messageCreate', async (message) => {
+  // Ignorar mensajes de otros bots
+  if (message.author.bot) return;
+
+  // Prefijo personalizado
+  const prefix = "a+";
+
+  // Verificar si el mensaje empieza con "a+"
+  if (!message.content.startsWith(prefix)) return;
+
+  // Separar el comando de los argumentos
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
+
+  // =========== Comandos de Waifu.pics ===========
+  try {
+    if (command === "waifu") {
+      const res = await fetch("https://api.waifu.pics/sfw/waifu");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "neko") {
+      const res = await fetch("https://api.waifu.pics/sfw/neko");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "hug") {
+      const res = await fetch("https://api.waifu.pics/sfw/hug");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "smile") {
+      const res = await fetch("https://api.waifu.pics/sfw/smile");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "slap") {
+      const res = await fetch("https://api.waifu.pics/sfw/slap");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "pat") {
+      const res = await fetch("https://api.waifu.pics/sfw/pat");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "lick") {
+      const res = await fetch("https://api.waifu.pics/sfw/lick");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "kiss") {
+      const res = await fetch("https://api.waifu.pics/sfw/kiss");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "kill") {
+      const res = await fetch("https://api.waifu.pics/sfw/kill");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "kick") {
+      const res = await fetch("https://api.waifu.pics/sfw/kick");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "highfive") {
+      const res = await fetch("https://api.waifu.pics/sfw/highfive");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "dance") {
+      const res = await fetch("https://api.waifu.pics/sfw/dance");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "cry") {
+      const res = await fetch("https://api.waifu.pics/sfw/cry");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "bonk") {
+      const res = await fetch("https://api.waifu.pics/sfw/bonk");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "blush") {
+      const res = await fetch("https://api.waifu.pics/sfw/blush");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "bite") {
+      const res = await fetch("https://api.waifu.pics/sfw/bite");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    // NSFW commands
+    if (command === "nsfw_waifu") {
+      if (!message.channel.nsfw) {
+        return message.reply("⚠️ Este comando solo funciona en canales NSFW.");
+      }
+      const res = await fetch("https://api.waifu.pics/nsfw/waifu");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "nsfw_trap") {
+      if (!message.channel.nsfw) {
+        return message.reply("⚠️ Este comando solo funciona en canales NSFW.");
+      }
+      const res = await fetch("https://api.waifu.pics/nsfw/trap");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "nsfw_neko") {
+      if (!message.channel.nsfw) {
+        return message.reply("⚠️ Este comando solo funciona en canales NSFW.");
+      }
+      const res = await fetch("https://api.waifu.pics/nsfw/neko");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+    if (command === "nsfw_blowjob") {
+      if (!message.channel.nsfw) {
+        return message.reply("⚠️ Este comando solo funciona en canales NSFW.");
+      }
+      const res = await fetch("https://api.waifu.pics/nsfw/blowjob");
+      const data = await res.json();
+      return message.reply(data.url);
+    }
+
+  } catch (err) {
+    console.error(err);
+    return message.reply("❌ Ocurrió un error al obtener la imagen.");
+  }
+});
+
+// ======================
+// 🔑 LOGIN DEL BOT
+// ======================
+
 client.login(process.env.TOKEN);
