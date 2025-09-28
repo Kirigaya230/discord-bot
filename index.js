@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const {Client, Collection, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, PermissionsBitField} = require('discord.js');
+const {Client, Collection, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, PermissionsBitField, EmbedBuilder} = require('discord.js');
 require('dotenv').config();
 
 console.log('🔁 Iniciando bot...');
@@ -218,98 +218,226 @@ client.on('messageCreate', async (message) => {
     if (command === "waifu") {
       const res = await fetch("https://api.waifu.pics/sfw/waifu");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 Waifu Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "neko") {
       const res = await fetch("https://api.waifu.pics/sfw/neko");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 neko Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "hug") {
       const res = await fetch("https://api.waifu.pics/sfw/hug");
       const data = await res.json();
-      return message.reply(data.url);
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 hug Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+      return message.reply({ embeds: [embed] });
     }
 
     if (command === "smile") {
       const res = await fetch("https://api.waifu.pics/sfw/smile");
       const data = await res.json();
-      return message.reply(data.url);
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 smile Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+      return message.reply({ embeds: [embed] });
     }
 
     if (command === "slap") {
       const res = await fetch("https://api.waifu.pics/sfw/slap");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 slap Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "pat") {
       const res = await fetch("https://api.waifu.pics/sfw/pat");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 pat Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "lick") {
       const res = await fetch("https://api.waifu.pics/sfw/lick");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 lick Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "kiss") {
       const res = await fetch("https://api.waifu.pics/sfw/kiss");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 kiss Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "kill") {
       const res = await fetch("https://api.waifu.pics/sfw/kill");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 kill Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "kick") {
       const res = await fetch("https://api.waifu.pics/sfw/kick");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 kick Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "highfive") {
       const res = await fetch("https://api.waifu.pics/sfw/highfive");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 highfive Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "dance") {
       const res = await fetch("https://api.waifu.pics/sfw/dance");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 dance Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "cry") {
       const res = await fetch("https://api.waifu.pics/sfw/cry");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 cry Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "bonk") {
       const res = await fetch("https://api.waifu.pics/sfw/bonk");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 bonk Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "blush") {
       const res = await fetch("https://api.waifu.pics/sfw/blush");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 blush Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "bite") {
       const res = await fetch("https://api.waifu.pics/sfw/bite");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 bite Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     // NSFW commands
     if (command === "nsfw_waifu") {
@@ -318,8 +446,16 @@ client.on('messageCreate', async (message) => {
       }
       const res = await fetch("https://api.waifu.pics/nsfw/waifu");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 nsfw_waifu Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "nsfw_trap") {
       if (!message.channel.nsfw) {
@@ -327,8 +463,16 @@ client.on('messageCreate', async (message) => {
       }
       const res = await fetch("https://api.waifu.pics/nsfw/trap");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 nsfw_trap Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "nsfw_neko") {
       if (!message.channel.nsfw) {
@@ -336,8 +480,16 @@ client.on('messageCreate', async (message) => {
       }
       const res = await fetch("https://api.waifu.pics/nsfw/neko");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 nsfw_neko Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
     if (command === "nsfw_blowjob") {
       if (!message.channel.nsfw) {
@@ -345,8 +497,16 @@ client.on('messageCreate', async (message) => {
       }
       const res = await fetch("https://api.waifu.pics/nsfw/blowjob");
       const data = await res.json();
-      return message.reply(data.url);
-    }
+  // Crear un embed para mostrar la imagen
+      const embed = new EmbedBuilder()
+    .setColor(0xff66cc) // Color rosado (puedes cambiarlo)
+    .setTitle("💖 nsfw_blowjob Random")
+    .setImage(data.url) // Imagen de la API
+    .setFooter({ text: `Solicitado por ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
+    .setTimestamp();
+
+  return message.reply({ embeds: [embed] });
+}
 
   } catch (err) {
     console.error(err);
