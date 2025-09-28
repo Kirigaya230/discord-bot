@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const {Client, Collection, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, PermissionsBitField, EmbedBuilder} = require('discord.js');
+const {Client, Collection, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, UserSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, PermissionsBitField} = require('discord.js');
 require('dotenv').config();
 
 console.log('🔁 Iniciando bot...');
